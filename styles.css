@@ -91,6 +91,11 @@ section {
   justify-content: center;
   transform: translateY(-50%);
 }
+
+.controls p {
+  font-size: 0.6rem;
+}
+
 .controls .control {
   padding: 1rem;
   cursor: pointer;
@@ -291,7 +296,7 @@ section {
 }
 .contact-content-con .left-contact h4 {
   margin-top: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
 }
 .contact-content-con .left-contact p {
@@ -301,7 +306,7 @@ section {
 .contact-content-con .left-contact .contact-info .contact-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .contact-content-con .left-contact .contact-info .contact-item p {
   margin: 0.3rem 0 !important;
@@ -319,6 +324,7 @@ section {
 .contact-content-con .left-contact .contact-icon {
   display: flex;
   margin-top: 2rem;
+  justify-content: space-around;
 }
 .contact-content-con .left-contact .contact-icon a {
   display: flex;
@@ -349,6 +355,8 @@ section {
   flex: 3;
   margin-left: 3rem;
 }
+
+
 .contact-content-con .right-contact .input-control {
   margin: 1.5rem 0;
 }
@@ -659,3 +667,4 @@ section {
   .main-title h2 .bg-text {
     font-size: 4rem;
   }
+}
