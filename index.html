@@ -12,6 +12,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="main-content">
+
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>An automated website pipeline.</p>
+        <p>This project currently uses: S3, ACM, Route 53, Cloufront, Github, CodeStar and CodePipeline</p>
+        <p>Open the Github link for more information and source code.</p>
+        </div>
+    
+    </div>
     <header class="container header active" id="home">
         <div class="header-content">
             <div class="right-header">
@@ -23,8 +35,8 @@
                     Check out my CV by clicking button below or check out my projects by pressing the <i class="fas fa-toolbox"></i> icon!
                 </p>
                 <div class="btn-con">
-                    <a href="" class="main-btn">
-                        <span class="btn-text">CV</span>
+                    <a href="./Gian Dulfo CV.pdf" class="main-btn">
+                        <span class="btn-text"> CV</span>
                         <span class="btn-icon"><i class="fas fa-download"></i></span>
                     </a>
                 </div>
@@ -39,7 +51,7 @@
             <div class="portfolios">
                 <div class="portfolio-item">
                     <div class="image">
-                        <img src="img/port1.png" alt="">
+                        <img src="img/AutomatedWebsiteDeployment.drawio.png" alt="">
                     </div>
                     <div class="hover-items">
                         <h3>Website Pipeline</h3>
@@ -48,11 +60,14 @@
                             <a href="#" class="icon">
                                 <i class="fab fa-github"></i>
                             </a>
-                        <a href="#">Read more</a>
+                        <a href="#" id="myBtn">Read more</a>
+
+                        <!-- The Modal -->
+                        
                         </div>
                     </div>
                 </div>
-                <div class="portfolio-item">
+                <!-- <div class="portfolio-item">
                     <div class="image">
                         <img src="img/port2.jpg" alt="">
                     </div>
@@ -64,7 +79,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> -->
                
         </section>    
         <section class="container contact" id="contact">
@@ -77,12 +92,12 @@
                         <div class="contact-info">
                             <div class="contact-item">
                                 <div class="icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>Location</span>
+                                    <i class="fab fa-github"></i>
+                                    <span>Github</span>
                                 </div>
-                                <p>
-                                    Cardiff, United Kingdom
-                                </p>
+                                <a href="https://github.com/giandulfo">
+                                    github.com/giandulfo
+                                </a>
                             </div>
                             <div class="contact-item">
                                 <div class="icon">
@@ -93,47 +108,34 @@
                                     <span>giandulfo@yahoo.co.uk</span>
                                 </p>
                             </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-user-graduate"></i>
-                                    <span>Education</span>
-                                </div>
-                                <p>
-                                    <span>Cardiff University, Cardiff, Wales</span>
-                                </p>
-                            </div>
                         </div>
-                        <div class="contact-icons">
-                            <div class="contact-icon">
-                                <a href="#" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="#" target="_blank">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                            </div>
-                        </div>
+                       
                     </div>
                     <div class="right-contact">
-                        <h2>Send me a message!</h2>
+                        <h2>Alternatively, you can send me a message below</h2>
                         <p><i>Please note that the functionality of this form is still in progress </i><i class="fas fa-smile-beam"></i></p>
-                        <form action="" class="contact-form">
+                        <form method="" name="contact-form" id="contact-form" class="contact-form">
                             <div class="input-control i-c-2">
-                                <input type="text" required placeholder="YOUR NAME">
-                                <input type="email" required placeholder="YOUR EMAIL">
+                                <input id="name-input" name="name" type="text" required placeholder="YOUR NAME">
+                                <input id="email-input" name="email" type="email" required placeholder="YOUR EMAIL">
                             </div>
                             <div class="input-control">
-                                <input type="text" required placeholder="ENTER SUBJECT">
+                                <input id="subject-input" name="subject" type="text" required placeholder="ENTER SUBJECT">
+                                
                             </div>
                             <div class="input-control">
-                                <textarea name="" id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
+                                <textarea name="message" id="message-input" cols="15" rows="8" placeholder="Message Here..."></textarea>
                             </div>
+
+                           
                             <div class="submit-btn">
-                                <a href="#" class="main-btn">
+                                <a href="#" id="submit" class="main-btn">
                                     <span class="btn-text">Send</span>
                                     <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
                                 </a>
+                             
                             </div>
+                            
                         </form>
                     </div>
                 </div>
