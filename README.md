@@ -16,14 +16,10 @@ Important steps.
 <h3>Using AWS-CLI</h3>
 Run
 <ul>
-  <li>First item</li>
-  <li>Second item</li>
-  <li>Third item</li>
-  <li>Fourth item</li>
+  <li>Aws s3 sync *local directory* *remote bucket* --acl public read.</li>
+  <li>Use –dryrun flag to test what’s going to happen before the files are uploaded.</li>
+  <li>Once command has been ran, verify the files has been uploaded on the console.</li>
 </ul>
--	Aws s3 sync <local directory> <remote bucket> --acl public read.
--	Use –dryrun flag to test what’s going to happen before the files are uploaded.
--	Once command has been ran, verify the files has been uploaded on the console.
 
 Open the static website endpoint to test that the website is working<br>
   
