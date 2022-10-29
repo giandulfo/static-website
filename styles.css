@@ -633,7 +633,7 @@ section {
   }
   .btn-con {
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
   }
   .main-btn {
     padding: 0px !important;
