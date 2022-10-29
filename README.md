@@ -1,6 +1,6 @@
 <h1>Automatic static website deployment using S3 and CodePipeline with a custom domain.</h1>
 
-<h2> The contents below states the steps taken to deploy a static website that automatically changes when the source code is updated from a chosen git repository. </h2>
+The contents below states the steps taken to deploy a static website that automatically changes when the source code is updated from a chosen git repository. 
 
 <h3>Create S3 bucket and configure it to host a static website. </h3>
 Important steps.
@@ -9,9 +9,6 @@ Important steps.
   <li>Write a bucket policy that grants s3:GetObject permission.</li>
   <li>Enter the file names for the home page and the error page.</li>
 </ul>
-
-
-
 
 <h3>Using AWS-CLI</h3>
 Run
@@ -82,11 +79,57 @@ Back to Route53<br>
 After a few minutes - Enter your domain in the browser, you should see your website showing as secure connection.
 
 Remember that CloudFront is serving cached content. It will need to be invalidated to pull again from S3.
+-------------------------------------------------------------------------------------
+
+<h2>Github action to invalidate a CloudFront distribution whenever source code changes.</h2>
+
+Ensure that you have your secrets saved in the repository. <br>
+REPONAME > Settings > Secrets 
+You will need to set Secrets for the items below.  
+
+
+```
+DISTRIBUTION = EAFDQBR8EXAMPLE
+AWS_ACCESS_KEY_ID
+AWS_SECRETACCESS_KEY
+```
+This section of the yaml file indicates where the workflow will not run.
+```
+paths-ignore:
+    - './README.md'
+```   
+Invalidate CloudFront
+
+```
+name: Invalidate Cloudfront on push
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@master
+
+      # Invalidate CloudFront (this action)
+      - name: Invalidate CloudFront
+        uses: chetan/invalidate-cloudfront-action@v2
+        env:
+          DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
+          PATHS: "/*"
+          AWS_REGION: "eu-west-2"
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+```
 
 -------------------------------------------------------------------------------------
 <h2>Possible upgrades</h2>
 <ul>
-<li>Automate invalidation once a change is made</li>
+<li>Automate invalidation once a change is made - Completed - 29.10.22</li>
 <li>Add a database to record hit counters</li>
 <li>Serverless Contact form using Lambda and API Gateway</li>
 </ul>
