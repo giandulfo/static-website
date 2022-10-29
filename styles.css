@@ -91,6 +91,11 @@ section {
   justify-content: center;
   transform: translateY(-50%);
 }
+
+.controls p {
+  font-size: 0.6rem;
+}
+
 .controls .control {
   padding: 1rem;
   cursor: pointer;
@@ -173,17 +178,6 @@ section {
   background-color: var(--color-black);
   transition: all 0.4s ease-in-out;
 }
-.header-content .left-header .image img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  transition: all 0.4s ease-in-out;
-  filter: grayscale(100%);
-}
-.header-content .left-header .image img:hover {
-  filter: grayscale(0);
-}
 .header-content .right-header {
   display: flex;
   flex-direction: column;
@@ -214,7 +208,7 @@ section {
 }
 .portfolios .portfolio-item img {
   width: 100%;
-  height: 300px;
+  height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
   border-radius: 15px;
@@ -291,7 +285,7 @@ section {
 }
 .contact-content-con .left-contact h4 {
   margin-top: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-transform: uppercase;
 }
 .contact-content-con .left-contact p {
@@ -301,7 +295,7 @@ section {
 .contact-content-con .left-contact .contact-info .contact-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .contact-content-con .left-contact .contact-info .contact-item p {
   margin: 0.3rem 0 !important;
@@ -319,6 +313,7 @@ section {
 .contact-content-con .left-contact .contact-icon {
   display: flex;
   margin-top: 2rem;
+  justify-content: space-around;
 }
 .contact-content-con .left-contact .contact-icon a {
   display: flex;
@@ -349,6 +344,8 @@ section {
   flex: 3;
   margin-left: 3rem;
 }
+
+
 .contact-content-con .right-contact .input-control {
   margin: 1.5rem 0;
 }
@@ -659,3 +656,74 @@ section {
   .main-title h2 .bg-text {
     font-size: 4rem;
   }
+}
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: var(--color-primary);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
