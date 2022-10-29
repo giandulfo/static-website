@@ -81,5 +81,13 @@ Back to Route53<br>
 
 After a few minutes - Enter your domain in the browser, you should see your website showing as secure connection.
 
-Remember that CloudFront is serving cache content. It will need to be invalidated to pull again from S3.
+Remember that CloudFront is serving cached content. It will need to be invalidated to pull again from S3.
+
+-------------------------------------------------------------------------------------
+<h2>Possible upgrades</h2>
+<ul>
+<li>Automate invalidation once a change is made</li>
+<li>Add a database to record hit counters</li>
+<li>Serverless Contact form using Lambda and API Gateway</li>
+</ul>
 
