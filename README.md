@@ -105,8 +105,12 @@ name: Invalidate Cloudfront on push
 on:
   push:
     branches: [ "main" ]
+    paths-ignore:
+      - 'README.md'
   pull_request:
     branches: [ "main" ]
+    paths-ignore:
+      - 'README.md'
 
 jobs:
   build-and-deploy:
@@ -130,6 +134,7 @@ jobs:
 <h2>Possible upgrades</h2>
 <ul>
 <li>Automate invalidation once a change is made - Completed - 29.10.22</li>
+<p> Update invalidation workflow to ignore README.md commits
 <li>Add a database to record hit counters</li>
 <li>Serverless Contact form using Lambda and API Gateway</li>
 </ul>
